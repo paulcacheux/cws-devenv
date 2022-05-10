@@ -18,10 +18,15 @@ sudo update-alternatives --install /usr/bin/llc llc /usr/bin/llc-11 1
 wget -q https://go.dev/dl/go1.17.9.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.17.9.linux-amd64.tar.gz
 
+mkdir -p /home/vagrant/go
+
 echo 'export GOROOT=/usr/local/go' >> ~/.bashrc
 echo 'export GOPATH=/home/vagrant/go' >> ~/.bashrc
 echo 'export PATH=/home/vagrant/go/bin:/usr/local/go/bin:/home/vagrant/.local/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
+
+# check go install
+go version
 
 sudo chown -R vagrant:vagrant /home/vagrant/dd
 
