@@ -26,13 +26,14 @@ sudo chown vagrant /home/vagrant/go/src/
 sudo chown vagrant /home/vagrant/go/src/github.com/
 
 # uncompress and install clang with eBPF backend
-sudo mkdir -p /opt/datadog-agent/embedded/
+sudo mkdir -p /opt/datadog-agent/embedded/bin
 sudo tar -xvf /vagrant/clang-ebpf-amd64-11.0.0.tar.xz -C /opt/datadog-agent/embedded
 
 # datadog-agent requirements
 cd ~/go/src/github.com/DataDog/datadog-agent || (echo "missing datadog-agent repository" && exit)
 printf "\ninstalling the agent dependencies ...\n"
 pip install -r requirements.txt
-inv deps
+inv -e deps
+inv -e install-tools
 
 printf "\ndone !\n\n"
