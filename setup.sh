@@ -25,9 +25,10 @@ source ~/.bashrc
 
 sudo chown -R vagrant:vagrant /home/vagrant/dd
 
-# uncompress and install clang with eBPF backend
+# install bpf specific clang and llc
 sudo mkdir -p /opt/datadog-agent/embedded/bin
-sudo tar -xvf /vagrant/clang-ebpf-amd64-11.0.0.tar.xz -C /opt/datadog-agent/embedded
+sudo cp /vagrant/binaries/$(uname -m)/clang /opt/datadog-agent/embedded/bin/clang-bpf
+sudo cp /vagrant/binaries/$(uname -m)/llc /opt/datadog-agent/embedded/bin/llc-bpf
 
 # datadog-agent requirements
 cd ~/dd/datadog-agent
