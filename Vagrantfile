@@ -3,7 +3,7 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/focal64"
-  config.vm.synced_folder "~/dd/", "/home/vagrant/go/src/github.com/DataDog/"
+  config.vm.synced_folder "~/dd/", "/home/vagrant/dd/"
   config.vm.network "private_network", type: "dhcp"
   config.disksize.size = '50GB'
 

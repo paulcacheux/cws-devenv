@@ -30,7 +30,7 @@ sudo mkdir -p /opt/datadog-agent/embedded/bin
 sudo tar -xvf /vagrant/clang-ebpf-amd64-11.0.0.tar.xz -C /opt/datadog-agent/embedded
 
 # datadog-agent requirements
-cd ~/go/src/github.com/DataDog/datadog-agent || (echo "missing datadog-agent repository" && exit)
+cd ~/dd/datadog-agent || (echo "missing datadog-agent repository" && exit)
 printf "\ninstalling the agent dependencies ...\n"
 pip install -r requirements.txt
 inv -e deps

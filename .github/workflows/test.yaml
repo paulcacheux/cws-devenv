@@ -26,3 +26,20 @@ jobs:
       - name: Create VM
         run: |
           vagrant up
+
+      - name: Run setup script
+        run: |
+          . /vagrant/setup.sh
+        shell: vagrant ssh -c {0}
+
+      - name: Test common invoke tasks 
+        run: |
+          cd ~/dd/datadog-agent
+          # general build
+          inv -e system-probe.build
+          inv -e security-agent.build
+          # functional tests
+          inv -e security-agent.build-embed-syscall-tester
+          inv -e security-agent.build-embed-latency-tools
+          inv -e security-agent.build-functional-tests
+        shell: vagrant ssh -c {0}
