@@ -1,0 +1,14 @@
+name: Test devenv
+
+on: push
+
+jobs:
+  test:
+    runs-on: macos-10.15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create VM
+        run: |
+          vagrant up
