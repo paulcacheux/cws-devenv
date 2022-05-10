@@ -37,7 +37,8 @@ sudo apt-get install -y \
     python3 \
     zlib1g-dev \
     libelf-dev \
-    libfl-dev
+    libfl-dev \
+    gcc-multilib # only on x64
 
 # Update alternatives to make python3 the default
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 1
