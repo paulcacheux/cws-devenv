@@ -1,6 +1,9 @@
 name: Test devenv
 
-on: push
+on:
+  push:
+  schedule:
+    - cron: "0 14 * * 1"
 
 jobs:
   test:
