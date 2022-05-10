@@ -20,10 +20,10 @@ sudo tar -C /usr/local -xzf go1.17.9.linux-amd64.tar.gz
 
 mkdir -p /home/vagrant/go
 
-echo 'export GOROOT=/usr/local/go' >> ~/.bashrc
-echo 'export GOPATH=/home/vagrant/go' >> ~/.bashrc
-echo 'export PATH=/home/vagrant/go/bin:/usr/local/go/bin:/home/vagrant/.local/bin:$PATH' >> ~/.bashrc
-source ~/.bashrc
+echo 'export GOROOT=/usr/local/go' >> ~/.profile
+echo 'export GOPATH=/home/vagrant/go' >> ~/.profile
+echo 'export PATH=/home/vagrant/go/bin:/usr/local/go/bin:/home/vagrant/.local/bin:$PATH' >> ~/.profile
+source ~/.profile
 
 # check go install
 go version
