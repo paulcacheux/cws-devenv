@@ -5,8 +5,39 @@ set -euxo pipefail
 ## setup
 echo "installing dependencies ..."
 sudo apt-get update
-sudo apt-get install -y vim httpie jq git unzip clang-11 llvm-11 bison cmake arping python3-pip python3-invoke linux-headers-$(uname -r) libelf-dev flex netperf iperf linux-tools-common apt-file
-sudo apt-get install -y bison build-essential cmake flex git libedit-dev libllvm11 llvm-11-dev libclang-11-dev python3 zlib1g-dev libelf-dev libfl-dev
+sudo apt-get install -y \
+    vim \
+    httpie \
+    jq \
+    git \
+    unzip \
+    clang-11 \
+    llvm-11 \
+    bison \
+    cmake \
+    arping \
+    python3-pip \
+    python3-invoke \
+    linux-headers-$(uname -r) \
+    libelf-dev \
+    flex \
+    netperf \
+    iperf \
+    linux-tools-common \
+    apt-file \
+    bison \
+    build-essential \
+    cmake \
+    flex \
+    git \
+    libedit-dev \
+    libllvm11 \
+    llvm-11-dev \
+    libclang-11-dev \
+    python3 \
+    zlib1g-dev \
+    libelf-dev \
+    libfl-dev
 
 # Update alternatives to make python3 the default
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 1
