@@ -6,8 +6,18 @@ jobs:
   test:
     runs-on: macos-10.15
     steps:
-      - name: Checkout repository
+      - name: Checkout devenv repository
         uses: actions/checkout@v3
+
+      - name: Checkout agent repository
+        uses: actions/checkout@v3
+        with:
+          repository: DataDog/datadog-agent
+          path: dd/datadog-agent
+
+      - name: Create dd link
+        run: |
+          ln -s "$GITHUB_WORKSPACE" ~/dd
 
       - name: Create VM
         run: |
