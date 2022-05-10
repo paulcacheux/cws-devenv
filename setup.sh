@@ -23,9 +23,7 @@ echo 'export GOPATH=/home/vagrant/go' >> ~/.bashrc
 echo 'export PATH=/home/vagrant/go/bin:/usr/local/go/bin:/home/vagrant/.local/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 
-sudo chown vagrant /home/vagrant/go
-sudo chown vagrant /home/vagrant/go/src/
-sudo chown vagrant /home/vagrant/go/src/github.com/
+sudo chown -R vagrant:vagrant /home/vagrant/dd
 
 # uncompress and install clang with eBPF backend
 sudo mkdir -p /opt/datadog-agent/embedded/bin
