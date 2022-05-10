@@ -17,7 +17,7 @@ jobs:
 
       - name: Create dd link
         run: |
-          ln -s "$GITHUB_WORKSPACE" ~/dd
+          ln -s "$GITHUB_WORKSPACE/dd" ~/dd
 
       - name: Install vagrant plugins
         run: |
