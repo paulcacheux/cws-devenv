@@ -28,7 +28,11 @@ sudo chown -R vagrant:vagrant /home/vagrant/dd
 # install bpf specific clang and llc
 sudo mkdir -p /opt/datadog-agent/embedded/bin
 sudo cp /vagrant/binaries/$(uname -m)/clang /opt/datadog-agent/embedded/bin/clang-bpf
+sudo chown root:root /opt/datadog-agent/embedded/bin/clang-bpf
+sudo chmod +x /opt/datadog-agent/embedded/bin/clang-bpf
 sudo cp /vagrant/binaries/$(uname -m)/llc /opt/datadog-agent/embedded/bin/llc-bpf
+sudo chown root:root /opt/datadog-agent/embedded/bin/llc-bpf
+sudo chmod +x /opt/datadog-agent/embedded/bin/llc-bpf
 
 # datadog-agent requirements
 cd ~/dd/datadog-agent
