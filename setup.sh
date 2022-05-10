@@ -1,7 +1,9 @@
 #!/bin/bash
 
+set -euxo pipefail
+
 ## setup
-printf "installing dependencies ...\n"
+echo "installing dependencies ..."
 sudo apt-get update
 sudo apt-get install -y vim httpie jq git unzip clang-11 llvm-11 bison cmake arping python3-pip python3-invoke linux-headers-$(uname -r) libelf-dev flex netperf iperf linux-tools-common apt-file
 sudo apt-get install -y bison build-essential cmake flex git libedit-dev libllvm11 llvm-11-dev libclang-11-dev python3 zlib1g-dev libelf-dev libfl-dev
@@ -30,10 +32,11 @@ sudo mkdir -p /opt/datadog-agent/embedded/bin
 sudo tar -xvf /vagrant/clang-ebpf-amd64-11.0.0.tar.xz -C /opt/datadog-agent/embedded
 
 # datadog-agent requirements
-cd ~/dd/datadog-agent || (echo "missing datadog-agent repository" && exit)
-printf "\ninstalling the agent dependencies ...\n"
+cd ~/dd/datadog-agent
+
+echo "installing the agent dependencies ..."
 pip install -r requirements.txt
 inv -e deps
 inv -e install-tools
 
-printf "\ndone !\n\n"
+echo "done !"
