@@ -17,6 +17,7 @@ jobs:
         with:
           repository: DataDog/datadog-agent
           path: dd/datadog-agent
+          ref: paulcacheux/tty-no-hz-debug
           fetch-depth: 0
 
       - name: Create dd link
