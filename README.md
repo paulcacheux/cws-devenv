@@ -46,8 +46,8 @@ You can also run functional tests in a docker container, with similar arguments:
 
 First install vagrant and virtualbox (this step should be a no-op for Datadog employees). You can then install a few helpful vagrant plugins:
 
-```
-vagrant plugin install vagrant-disksize vagrant-reload
+```sh
+>> vagrant plugin install vagrant-disksize vagrant-reload
 ```
 
 ## Booting the VM
@@ -55,13 +55,13 @@ vagrant plugin install vagrant-disksize vagrant-reload
 Clone this repo (or copy `Vagrantfile`, `binaries/$ARCH` and  `setup.sh`), `cd` into it and run vagrant up.
 
 Once the VM is booted, you can run
-```
+```sh
 >> vagrant ssh
 ```
 to ssh into the VM.
 
 After the first boot, please run
-```
+```sh
 >> /vagrant/setup.sh
 ```
 to install required dependencies (`apt` packages, `go`, etc).
