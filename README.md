@@ -65,3 +65,6 @@ After the first boot, please run
 /vagrant/setup.sh
 ```
 to install required dependencies (`apt` packages, `go`, etc).
+Then reboot the VM.
+
+You can now `cd` into `~/dd/datadog-agent` and start building !
