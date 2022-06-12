@@ -38,7 +38,7 @@ sudo apt-get install -y \
     zlib1g-dev \
     libelf-dev \
     libfl-dev \
-    gcc-multilib # only on x64
+    gcc-multilib # only on x64, used for syscall testers
 
 # Update alternatives to make python3 the default
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 1
@@ -61,7 +61,7 @@ source ~/.profile
 # check go install
 go version
 
-sudo chown -R vagrant:vagrant /home/vagrant/dd
+# sudo chown -R vagrant:vagrant /home/vagrant/dd
 
 # install bpf specific clang and llc
 sudo mkdir -p /opt/datadog-agent/embedded/bin
