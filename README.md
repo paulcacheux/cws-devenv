@@ -56,13 +56,13 @@ Clone this repo (or copy `Vagrantfile`, `binaries/$ARCH` and  `setup.sh`), `cd` 
 
 Once the VM is booted, you can run
 ```
-vagrant ssh
+>> vagrant ssh
 ```
 to ssh into the VM.
 
 After the first boot, please run
 ```
-/vagrant/setup.sh
+>> /vagrant/setup.sh
 ```
 to install required dependencies (`apt` packages, `go`, etc).
 Then reboot the VM.
