@@ -37,5 +37,5 @@ jobs:
 
       - name: Test common invoke tasks 
         run: |
-          vagrant ssh -c /vagrant/check_setup.sh
+          vagrant ssh -c /vagrant/test_utils/check_setup.sh
           
