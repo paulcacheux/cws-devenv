@@ -47,8 +47,9 @@ sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-11 1
 sudo update-alternatives --install /usr/bin/llc llc /usr/bin/llc-11 1
 
 # Install Go
-wget -q https://go.dev/dl/go1.17.9.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.17.9.linux-amd64.tar.gz
+GO_VERSION=1.17.11
+wget -q https://go.dev/dl/go$GO_VERSION.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go$GO_VERSION.linux-amd64.tar.gz
 
 mkdir -p /home/vagrant/go
 
