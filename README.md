@@ -53,7 +53,7 @@ First install vagrant and virtualbox (this step should be a no-op for Datadog em
 ## Booting the VM
 
 Clone this repo (or copy `Vagrantfile`, `binaries/$ARCH` and  `setup.sh`), `cd` into it and run
-```
+```sh
 >> vagrant up
 ```
 
