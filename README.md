@@ -52,7 +52,9 @@ First install vagrant and virtualbox (this step should be a no-op for Datadog em
 
 ## Booting the VM
 
-Clone this repo (or copy `Vagrantfile`, `binaries/$ARCH` and  `setup.sh`), `cd` into it and run
+Clone https://github.com/DataDog/security-agent-policies into ~/dd on your workstation.
+
+Clone this repo into ~/dd (or copy `Vagrantfile`, `binaries/$ARCH` and  `setup.sh`), `cd` into it and run
 ```sh
 >> vagrant up
 ```
@@ -68,6 +70,7 @@ After the first boot, please run
 >> /vagrant/setup.sh
 ```
 to install required dependencies (`apt` packages, `go`, etc).
-Then reboot the VM.
+Then reboot the VM with `vagrant reload`.
 
-You can now `cd` into `~/dd/datadog-agent` and start building !
+You can now `cd` into `~/dd/datadog-agent` in your Vagrant box and start building ! 
+You can also `source ~/.profile` to get the `cda` alias to `cd` into `~/dd/datadog-agent` faster.
