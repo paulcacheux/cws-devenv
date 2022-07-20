@@ -81,11 +81,6 @@ inv -e install-tools
 # This directory, where the sysprobe.sock is created, is usually created by Datadog Agent install package, and it's owned by dd-agent, not root. For local testing, we need to manually create this dir and have it owned by root.
 sudo mkdir -p /opt/datadog-agent/run/
 
-# The bytecode files need to be in a dir owned by root in order for system-probe to be run as root
-bytecode_dir=/etc/datadog-agent/bytecode
-sudo mkdir -p $bytecode_dir
-sudo cp -r ~/dd/datadog-agent/pkg/ebpf/bytecode/build/. $bytecode_dir
-
 echo "writing agent yamls if they do not already exist. insert your own API key to /etc/datadog-agent/security-agent.yaml"
 system_probe_yaml="/etc/datadog-agent/system-probe.yaml"
 tmp_system_probe_yaml="/tmp/system-probe.yaml"
@@ -93,7 +88,6 @@ if [[ ! -e $system_probe_yaml ]]; then
   echo "system_probe_config:
   log_level: debug
   enabled: true
-  bpf_dir: $bytecode_dir
 
 runtime_security_config:
    enabled: true
