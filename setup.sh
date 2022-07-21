@@ -80,6 +80,7 @@ inv -e install-tools
 
 # This directory, where the sysprobe.sock is created, is usually created by Datadog Agent install package, and it's owned by dd-agent, not root. For local testing, we need to manually create this dir and have it owned by root.
 sudo mkdir -p /opt/datadog-agent/run/
+sudo mkdir -p /etc/datadog-agent/
 
 echo "writing agent yamls if they do not already exist. insert your own API key to /etc/datadog-agent/security-agent.yaml"
 system_probe_yaml="/etc/datadog-agent/system-probe.yaml"
