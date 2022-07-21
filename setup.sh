@@ -78,6 +78,45 @@ pip install -r requirements.txt
 inv -e deps
 inv -e install-tools
 
-echo "done !"
+# This directory, where the sysprobe.sock is created, is usually created by Datadog Agent install package, and it's owned by dd-agent, not root. For local testing, we need to manually create this dir and have it owned by root.
+sudo mkdir -p /opt/datadog-agent/run/
+
+echo "writing agent yamls if they do not already exist. insert your own API key to /etc/datadog-agent/security-agent.yaml"
+system_probe_yaml="/etc/datadog-agent/system-probe.yaml"
+tmp_system_probe_yaml="/tmp/system-probe.yaml"
+if [[ ! -e $system_probe_yaml ]]; then
+  echo "system_probe_config:
+  log_level: debug
+  enabled: true
+
+runtime_security_config:
+   enabled: true
+   policies:
+    dir: ~/security-agent-policies/runtime
+
+network_config:
+  enabled: false" > $tmp_system_probe_yaml
+
+  sudo mv $tmp_system_probe_yaml $system_probe_yaml
+fi
+
+security_agent_yaml="/etc/datadog-agent/security-agent.yaml"
+tmp_security_agent_yaml="/tmp/security-agent.yaml"
+if [[ ! -e $security_agent_yaml ]]; then
+  echo "api_key: [your_dd_api_key]
+runtime_security_config:
+  enabled: true
+
+compliance_config:
+  enabled: false" > $tmp_security_agent_yaml
+
+  sudo mv $tmp_security_agent_yaml $security_agent_yaml
+fi
+
+sudo chown root:root /etc/datadog-agent/*
+
+echo "alias cda=\"cd ~/dd/datadog-agent\"" >> ~/.profile
+
+echo "done! \"source ~/.profile\" to get the shortcut \"cda\" to cd into the datadog-agent directory"
 
 popd
