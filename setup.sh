@@ -38,6 +38,7 @@ sudo apt-get install -y \
     zlib1g-dev \
     libelf-dev \
     libfl-dev \
+    ninja-build \
     gcc-multilib # only on x64, used for syscall testers
 
 # Update alternatives to make python3 the default
@@ -69,6 +70,10 @@ sudo chmod +x /opt/datadog-agent/embedded/bin/clang-bpf
 sudo cp /vagrant/binaries/$(uname -m)/llc /opt/datadog-agent/embedded/bin/llc-bpf
 sudo chown root:root /opt/datadog-agent/embedded/bin/llc-bpf
 sudo chmod +x /opt/datadog-agent/embedded/bin/llc-bpf
+
+# setup eBPF dir
+sudo mkdir -p /opt/datadog-agent/embedded/share/system-probe/ebpf/runtime
+sudo chown vagrant:vagrant -R /opt/datadog-agent/embedded/share/system-probe/ebpf/runtime
 
 # datadog-agent requirements
 pushd ~/dd/datadog-agent
