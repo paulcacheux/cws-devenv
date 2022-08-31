@@ -48,7 +48,7 @@ sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-11 1
 sudo update-alternatives --install /usr/bin/llc llc /usr/bin/llc-11 1
 
 # Install Go
-GO_VERSION=1.17.12
+GO_VERSION=1.18.5
 wget -q https://go.dev/dl/go$GO_VERSION.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go$GO_VERSION.linux-amd64.tar.gz
 
