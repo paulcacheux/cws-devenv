@@ -38,6 +38,7 @@ sudo apt-get install -y \
     zlib1g-dev \
     libelf-dev \
     libfl-dev \
+    ninja-build \
     gcc-multilib # only on x64, used for syscall testers
 
 # Update alternatives to make python3 the default
