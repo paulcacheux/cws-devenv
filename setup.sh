@@ -11,11 +11,11 @@ sudo apt-get install -y \
     jq \
     git \
     unzip \
-    clang-14 \
-    llvm-14 \
-    libllvm14 \
-    llvm-14-dev \
-    libclang-14-dev \
+    clang-12 \
+    llvm-12 \
+    libllvm12 \
+    llvm-12-dev \
+    libclang-12-dev \
     bison \
     cmake \
     arping \
@@ -44,8 +44,8 @@ sudo apt-get install -y \
 # Update alternatives to make python3 the default
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 sudo update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
-sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-14 1
-sudo update-alternatives --install /usr/bin/llc llc /usr/bin/llc-14 1
+sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-12 1
+sudo update-alternatives --install /usr/bin/llc llc /usr/bin/llc-12 1
 
 # Install Go
 GO_VERSION=1.18.5
